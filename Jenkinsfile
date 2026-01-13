@@ -10,7 +10,7 @@ pipeline {
         ECS_FRONTEND_SERVICE = 'bbms-frontend'
     }
 
-stages {
+    stages {
 
         stage('AWS Auth Test') {
             steps {
