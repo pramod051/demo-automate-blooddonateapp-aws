@@ -29,7 +29,6 @@ stages {
         }
     }
 
-}
     
     stages {
         stage('Checkout') {
