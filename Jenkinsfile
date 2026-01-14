@@ -24,29 +24,29 @@ pipeline {
                         def backendImage = docker.build("${ECR_BACKEND_REPO}:${BUILD_NUMBER}")
                         
                         // Get ECR login token
-    stages {
-    stage('ECR Login') {
-      steps {
-        withCredentials([[
-          $class: 'AmazonWebServicesCredentialsBinding',
-          credentialsId: 'aws-creds'
-        ]]) {
-          sh '''
-            aws --version
-            aws sts get-caller-identity
-
-            aws ecr get-login-password --region $AWS_REGION \
-            | docker login --username AWS --password-stdin \
-            $(aws sts get-caller-identity --query Account --output text).dkr.ecr.$AWS_REGION.amazonaws.com
-          '''
-        }
-      }
-    }
-  }  
+#    stages {
+#    stage('ECR Login') {
+#      steps {
+#        withCredentials([[
+#          $class: 'AmazonWebServicesCredentialsBinding',
+#          credentialsId: 'aws-creds'
+#        ]]) {
+#          sh '''
+#            aws --version
+#            aws sts get-caller-identity
+#
+#            aws ecr get-login-password --region $AWS_REGION \
+#            | docker login --username AWS --password-stdin \
+#            $(aws sts get-caller-identity --query Account --output text).dkr.ecr.$AWS_REGION.amazonaws.com
+#          '''
+#        }
+#      }
+#    }
+#  }  
  
-#                        sh '''
-#                           aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query Account --output text).dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-#                        '''
+                        sh '''
+                           aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $(aws sts get-caller-identity --query Account --output text).dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+                        '''
                         
                         // Tag and push image
                         sh '''
