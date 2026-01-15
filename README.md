@@ -1,6 +1,6 @@
 # Blood Bank Management System (BBMS)
 
-# Ab to ho jao,  just change, again  again change, change, add some line, somethig add, plz bhai, are bhaii
+# jaan lebu ka, Ab to ho jao,  just change, again  again change, change, add some line, somethig add, plz bhai, are bhaii
 ## Overview
 
 The **Blood Bank Management System (BBMS)** is a web-based platform designed to streamline the management of blood donations, hospital requests, and inventory tracking. By replacing manual processes with a structured digital workflow, BBMS enables hospitals and blood banks to access real-time inventory, maintain donor records, and process blood requests efficiently.
