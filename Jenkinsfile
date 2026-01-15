@@ -63,7 +63,10 @@ pipeline {
         
         stage('Deploy Infrastructure') {
             when {
-                branch 'main'
+		anyof {
+                    branch 'main'
+		    branch 'master
+		}'
             }
             steps {
                 dir('terraform') {
@@ -78,7 +81,10 @@ pipeline {
         
         stage('Deploy to ECS') {
             when {
-                branch 'main'
+		anyof {
+                    branch 'main'
+		    branch 'master'
+		}
             }
             steps {
                 sh '''
