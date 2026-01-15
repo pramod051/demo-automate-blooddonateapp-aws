@@ -65,8 +65,8 @@ pipeline {
             when {
 		anyof {
                     branch 'main'
-		    branch 'master
-		}'
+		    branch 'master'
+		}
             }
             steps {
                 dir('terraform') {
